@@ -29,7 +29,7 @@ pip3 install adafruit-circuitpython-bh1750
 pip3 install adafruit-circuitpython-ads1x15
 #
 echo install postfix as mail processor 
-echo use a satellite system with FQDN as local host description and provide a(n internal) relay host
+echo use a satellite system with FQDN as local host description and provide a,n internal, relay host
 read -n 1 -s -r -p "Press a key to continue"
 sudo apt install postfix
 echo check postfix configuration 
