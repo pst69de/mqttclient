@@ -1,0 +1,5 @@
+{
+  "HOST" : "mqtt.domain.tld"
+, "USERNAME" : "username"
+, "PASSWORD" : "password"
+}
