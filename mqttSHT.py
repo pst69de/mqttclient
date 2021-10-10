@@ -12,7 +12,7 @@
 #
 # 2021-10-10;POE;Initial code deploy
 
-class BH:
+class SHT:
     def __init__(self,i2c):
         self.I2C = i2c
         from adafruit_sht31d import SHT31D
