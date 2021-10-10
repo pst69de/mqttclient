@@ -20,7 +20,7 @@ sudo raspi-config
 sudo apt update
 sudo apt upgrade
 sudo apt install i2c-tools
-sudo apt install python3-install
+sudo apt install python3-pip
 pip3 install paho-mqtt
 pip3 install psutil
 pip3 install adafruit-circuitpython-ina219
