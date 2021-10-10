@@ -40,7 +40,8 @@ MQTT = "mqtt-server.domain.tld"
 USERNAME = "USERNAME"
 PASSWORD = "PASSWORD"
 # load configuration here
-with open('mqttconnect.json') as f:
+# TODO: find out, how to use relative filename
+with open('/home/pi/mqttclient/mqttconnect.json') as f:
     d = json.load(f)
     MQTT = d["HOST"]
     USERNAME = d["USERNAME"]
