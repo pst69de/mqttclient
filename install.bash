@@ -13,7 +13,8 @@
 #
 # 2021-10-10;POE;Initial code deploy
 
-echo first step: change password, enable SSH, enable I2C
+echo first step: change password, enable SSH, enable I2C 
+echo do reboot at end of script run 
 read -n 1 -s -r -p "Press a key to continue"
 sudo raspi-config
 sudo apt update
