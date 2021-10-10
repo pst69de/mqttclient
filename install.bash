@@ -45,3 +45,4 @@ sudo vi /etc/crontab
 echo edit configuration mqttconnect.json file 
 read -n 1 -s -r -p "Press a key to continue"
 sudo vi mqttconnect.json
+sudo reboot
