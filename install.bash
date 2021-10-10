@@ -39,7 +39,7 @@ chmod 0744 *.py
 echo edit crontab 
 echo with MAILTO: address
 echo and job entry:
-echo 00 *	* * *	pi	/home/pi/mqttclient/mqttclient.py
+echo "00 *	* * *	pi	/home/pi/mqttclient/mqttclient.py"
 read -n 1 -s -r -p "Press a key to continue"
 sudo vi /etc/crontab
 echo edit configuration mqttconnect.json file 
