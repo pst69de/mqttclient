@@ -45,6 +45,7 @@ with open('mqttconnect.json') as f:
     MQTT = d["HOST"]
     USERNAME = d["USERNAME"]
     PASSWORD = d["PASSWORD"]
+print( 'HOST {0} USERNAME {1}'.format(MQTT,USERNAME))
 CLIENTNAME = socket.gethostname()
 CHECKI2CDEVICES = { 0x40: "mqttINA", 0x44: "mqttSHT", 0x23:"mqttBH", 0x48:"mqttADS"}
 DEVICES = []
