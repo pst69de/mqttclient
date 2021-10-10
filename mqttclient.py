@@ -6,7 +6,7 @@
 #
 # content:
 # mqtt client base script
-#   TODO: configuration by mqttconnect.json 
+#   configuration by mqttconnect.json 
 #   imports mqttINA.py if needed for handling INA219 sensors
 #   imports mqttSHT.py if needed for handling SHT3x sensors
 #   imports mqttBH.py if needed for handling BH1750 sensors
@@ -30,6 +30,7 @@ import os
 import socket
 import signal
 import psutil
+import json
 
 PORTOUT1 = 5
 PORTOUT2 = 6
@@ -38,7 +39,12 @@ PORTOUT4 = 8
 MQTT = "mqtt-server.domain.tld"
 USERNAME = "USERNAME"
 PASSWORD = "PASSWORD"
-# TODO: load configuration here
+# load configuration here
+with open('mqttconnect.json') as f:
+    d = json.load(f)
+    MQTT = d["HOST"]
+    USERNAME = d["USERNAME"]
+    PASSWORD = d["PASSWORD"]
 CLIENTNAME = socket.gethostname()
 CHECKI2CDEVICES = { 0x40: "mqttINA", 0x44: "mqttSHT", 0x23:"mqttBH", 0x48:"mqttADS"}
 DEVICES = []
