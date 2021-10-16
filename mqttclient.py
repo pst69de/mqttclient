@@ -22,6 +22,7 @@ from time import sleep
 
 from board import SCL,SDA
 from busio import I2C
+from mqttDETECT import I2CDEV
 
 from paho.mqtt import client as mqtt
 from paho.mqtt import subscribe as subscribe
@@ -108,8 +109,13 @@ print("GPIO 4 init %s on %i" % (sw4,PORTOUT4))
 # https://learn.adafruit.com/circuitpython-basics-i2c-and-spi/i2c-devices
 # get i2c devices
 i2c = I2C(SCL, SDA)
+scanI2C = I2CDEV()
 # [hex(x) for x in i2c.scan()]
-for dev in i2c.scan():
+#print(i2c.scan())
+#print(scanI2C.splice)
+#for dev in i2c.scan():
+for dev in range(0x03,0x078):
+    #print('Device ',hex(dev))
     if dev in CHECKI2CDEVICES.keys():
         print('{0} in DEVICES {1}'.format(hex(dev),CHECKI2CDEVICES[dev]))
         if CHECKI2CDEVICES[dev] == "mqttINA":
@@ -127,7 +133,8 @@ for dev in i2c.scan():
             DEVICES.append(ADS(i2c))
             #pass
     else:
-        print('{0} unknown device'.format(hex(dev)))
+        #print('{0} unknown device'.format(hex(dev)))
+        pass
 
 # initial values print
 print('@ {0} {1} {2} {3} {4}'.format(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()), sw1, sw2, sw3, sw4))
