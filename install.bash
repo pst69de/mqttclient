@@ -17,10 +17,16 @@ echo first step: change password, enable SSH, enable I2C
 echo do reboot at end of script run 
 read -n 1 -s -r -p "Press a key to continue"
 sudo raspi-config
+echo update raspi 
+read -n 1 -s -r -p "Press a key to continue"
 sudo apt update
+echo upgrade raspi 
+read -n 1 -s -r -p "Press a key to continue"
 sudo apt upgrade
-sudo apt install i2c-tools
-sudo apt install python3-pip
+echo install tools and python 
+read -n 1 -s -r -p "Press a key to continue"
+sudo apt install i2c-tools -y
+sudo apt install python3-pip -y
 pip3 install paho-mqtt
 pip3 install psutil
 pip3 install adafruit-circuitpython-ina219
@@ -31,7 +37,7 @@ pip3 install adafruit-circuitpython-ads1x15
 echo install postfix as mail processor 
 echo use a satellite system with FQDN as local host description and provide a,n internal, relay host
 read -n 1 -s -r -p "Press a key to continue"
-sudo apt install postfix
+sudo apt install postfix -y
 echo check postfix configuration 
 read -n 1 -s -r -p "Press a key to continue"
 sudo vi /etc/postfix/main.cf
