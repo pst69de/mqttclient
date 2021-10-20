@@ -116,7 +116,8 @@ scanI2C = I2CDEV()
 #for dev in i2c.scan():
 for dev in range(0x03,0x078):
     #print('Device ',hex(dev))
-    if dev in CHECKI2CDEVICES.keys():
+    #if dev in CHECKI2CDEVICES.keys():
+    if scanI2C.isdev(dev):
         print('{0} in DEVICES {1}'.format(hex(dev),CHECKI2CDEVICES[dev]))
         if CHECKI2CDEVICES[dev] == "mqttINA":
             from mqttINA import INA
